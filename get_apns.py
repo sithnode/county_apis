@@ -10,13 +10,13 @@ def isNaN(num):
     return num != num
 
 def get_county_data_dir(houseno,street,zipcode,direction):
-	app_token = 'Bzi11gOBCaCvhiihGggPwkrsZ'
+	app_token = 'your-token'
 	client = Socrata("data.lacounty.gov", app_token)
 	results = client.get("7rjj-f2pv", limit=100, situshouseno=str(houseno),situsstreet=str(street),situszip5=str(zipcode),usetype='SFR',situsdirection=str(direction))
 	return results
 
 def get_county_data(houseno,street,zipcode):
-	app_token = 'Bzi11gOBCaCvhiihGggPwkrsZ'
+	app_token = 'your-token'
 	client = Socrata("data.lacounty.gov", app_token)
 	results = client.get("7rjj-f2pv", limit=100, situshouseno=str(houseno),situsstreet=str(street),situszip5=str(zipcode),usetype='SFR')
 	return results
